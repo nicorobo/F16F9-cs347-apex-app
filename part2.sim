@@ -1,0 +1,170 @@
+# This example was cleaned up and made to work by Eliot Lyon in October, 2015
+
+connOracleNoSQL = connectTo 'OracleNoSQL' 'WDB' 'localhost:5010' 'native_mode' 'A0' nodebug
+
+SIM on connOracleNoSQL "CLEAR DATABASE"
+
+# Organization Schema
+#Person
+SIM on connOracleNoSQL '''CLASS Person 
+(
+    person-id : INTEGER, REQUIRED;
+    first-name : STRING, REQUIRED;
+    last-name : STRING, REQUIRED;
+    home_address : STRING;
+    zipcode : INTEGER;
+    home-phone "Home phone number (optional)" : INTEGER;
+    us-citizen "U.S. citizenship status" : BOOLEAN, REQUIRED;
+    spouse "Persons spouse if married" : Person, INVERSE IS
+    spouse;
+    children "Persons children (optional)" : Person, MV(DISTINCT),
+    INVERSE IS parents;
+    parents "Persons parents (optional)" : Person, MV (DISTINCT,
+    MAX 2), INVERSE IS children;
+);'''
+# Persons with person-id 1 to 5 created
+SIM on connOracleNoSQL 'INSERT Person ( person-id := 1 , first-name := "Bill" , last-name := "Dawer" , home_address:= "432 Hill Rd", zipcode := 78705, home-phone := 7891903 , us-citizen := TRUE );'
+SIM on connOracleNoSQL 'INSERT Person ( person-id := 2 , first-name := "Diane" , last-name:= "Wall" , home_address:= "32 Cannon Dr", zipcode  := 78705, home-phone := 7891903 , us-citizen := TRUE );'
+SIM on connOracleNoSQL 'INSERT Person ( person-id := 3 , first-name := "Jennifer" , last-name := "Brown" , home_address:= "35 Palm Lane", zipcode := 73014, home-phone := 2360884 , us-citizen := TRUE );'
+SIM on connOracleNoSQL 'INSERT Person ( person-id := 4, first-name := "Alice" , last-name := "Dawer" , home_address:= "432 Hill Rd", zipcode := 78021, home-phone := 6541658 , us-citizen := FALSE );'
+SIM on connOracleNoSQL 'INSERT Person ( person-id := 5 , first-name := "George" , last-name := "Layton" , home_address:= "347 Nueces St", zipcode := 78705, home-phone := 8798798 , us-citizen := TRUE );'
+SIM on connOracleNoSQL 'INSERT Person ( person-id := 9 , first-name := "Mike" , last-name := "Dawer" , home_address:= "432 Hill Rd", zipcode := 78705, home-phone := 7891903 , us-citizen := TRUE );'
+#Finally person-id 1 to 9 People
+
+#Employee
+SIM on connOracleNoSQL '''SUBCLASS Employee "Current employees of the company" OF Person
+(
+    employee-id "Unique employee identification" : INTEGER, REQUIRED;
+    salary "Current yearly salary" : INTEGER, REQUIRED;
+    salary-exception "TRUE if salary can exceed maximum" : BOOLEAN;
+    employee-manager "Employee's current manager" : Manager, INVERSE IS employees-managing;
+);'''
+# Person with person-id 1, 2, and 5 made employee
+SIM on connOracleNoSQL 'INSERT Employee FROM Person WHERE first-name = "Bill" AND last-name = "Dawer" ( employee-id:= 101,salary:= 70200, salary-exception := TRUE );'
+SIM on connOracleNoSQL 'INSERT Employee FROM Person WHERE person-id = 2 ( employee-id:= 102,salary:= 80210, salary-exception := FALSE );'
+SIM on connOracleNoSQL 'INSERT Employee FROM Person WHERE person-id = 5 ( employee-id:= 105,salary:= 70201, salary-exception := FALSE );'
+# Persons with person-id 6 to 7 created and made Employee
+SIM on connOracleNoSQL 'INSERT Employee ( person-id := 6 , first-name := "Susan" , last-name := "Petro" , home_address:= "323 Country Lane", zipcode := 73421, home-phone := 6541238 , us-citizen := TRUE , employee-id:= 106,salary:= 70210);'
+SIM on connOracleNoSQL 'INSERT Employee ( person-id := 7 , first-name := "Steven" , last-name := "Williams" , home_address:= "3 Seton St", zipcode := 78705, home-phone := 8798712 , us-citizen := FALSE , employee-id:= 107,salary:= 70210);'
+# Finally person-id 1, 2, 3, 5, 6 , 7 and 8 are Employee
+
+# Project-Employee
+SIM on connOracleNoSQL '''SUBCLASS Project-Employee "Employees who are project team members" OF Employee
+(
+current-projects "current project of employee" : Current-Project,
+MV (DISTINCT, MAX 6), INVERSE IS project-members;
+);'''
+# Person with Person-id 1, 2, 5, 6 and 7 made Project-Employee
+SIM on connOracleNoSQL 'INSERT Project-Employee FROM Employee WHERE employee-id = 101 ();'
+SIM on connOracleNoSQL 'INSERT Project-Employee FROM Employee WHERE employee-id = 102 ();'
+SIM on connOracleNoSQL 'INSERT Project-Employee FROM Person WHERE person-id = 3 (employee-id:= 103,salary:= 80210) ;'
+SIM on connOracleNoSQL 'INSERT Project-Employee FROM Employee WHERE employee-id = 106 ();'
+SIM on connOracleNoSQL 'INSERT Project-Employee FROM Employee WHERE employee-id = 107 ();'
+# Finally person-id 1, 2, 3, 6 and 7 are Project-Employee
+
+#Manager
+SIM on connOracleNoSQL '''SUBCLASS Manager "Managers of the company" OF Employee
+(
+bonus "Yearly bonus, if any" : INTEGER;
+employees-managing "Employees reporting to manager" : Employee, MV, INVERSE IS employee-manager;
+projects-managing "Projects responsible for" : Project, MV, INVERSE IS project-manager; manager-dept "Department to which manager belong" : Department, INVERSE IS dept-managers;
+);'''
+# Persons with person-id 8 created and made Employee and Manager
+SIM on connOracleNoSQL 'INSERT Manager ( person-id := 8 , first-name := "Henry" , last-name := "Silverstone" , home_address:= "100 Gates St", zipcode := 70007, home-phone := 4565404 , us-citizen := TRUE ,employee-id:= 108,salary:= 570201 , bonus:= 200000 );'
+# Persons with person-id 1 made Manager
+SIM on connOracleNoSQL 'INSERT Manager FROM Employee WHERE employee-id = 101 ( bonus:= 10000 );'
+# Finally person-id 1 , 7 and 8 are Project-Employee
+
+# Interim-Manager
+SIM on connOracleNoSQL '''SUBCLASS Interim-Manager "Employees temporarily acting as a project employee and a manager" OF Manager AND Project-Employee();'''
+# Person with Person-id 1 and 7 made Interim-Manager.
+# Note 7 will be automatically made manager
+SIM on connOracleNoSQL 'INSERT Interim-Manager FROM Manager WHERE employee-id = 101 ();'
+SIM on connOracleNoSQL 'INSERT Interim-Manager FROM Employee WHERE employee-id = 107 ();'
+# Finally person-id 1 and 7
+
+# President
+SIM on connOracleNoSQL '''SUBCLASS President "Current president of the company" OF Manager();'''
+# Persons with person-id 8 made President
+SIM on connOracleNoSQL 'INSERT President FROM Person WHERE first-name = "Henry" AND last-name = "Silverstone" ();'
+# Finally person-id 8
+
+# Previous-Employee
+SIM on connOracleNoSQL '''SUBCLASS Previous-Employee "Past employees of the company" OF Person
+(
+    IsFired : BOOLEAN ;
+    salary "Salary as of termination" : INTEGER, REQUIRED;
+);'''
+# Persons with person-id 4 created and made Previous-Employee
+SIM on connOracleNoSQL 'INSERT Previous-Employee FROM Person WHERE person-id = 4 ( salary:= 50500 ) ;'
+
+# Project
+SIM on connOracleNoSQL '''CLASS Project "Current and completed Projects"
+(
+    project-no "Unique project identification" : INTEGER, REQUIRED;
+    project-title "Code name for project" : STRING [20], REQUIRED;
+    project-manager "Current project manager" : Manager, INVERSE IS projects-managing;
+    dept-assigned "Responsible department" : Department, SV, INVERSE IS project-at;
+    sub-projects "Component projects, if any" : Project, MV, INVERSE IS sub-project-of;
+    sub-project-of "Master project, if any" : Project, INVERSE IS sub-projects;
+);'''
+SIM on connOracleNoSQL 'INSERT Project( project-no:= 701 ,project-title := "Mission Impossible");'
+SIM on connOracleNoSQL 'INSERT Project( project-no:= 702 ,project-title := "Code Red");'
+SIM on connOracleNoSQL 'INSERT Project( project-no:= 703 ,project-title := "Desert Rose");'
+SIM on connOracleNoSQL 'INSERT Project( project-no:= 704 ,project-title := "Hallo");'
+SIM on connOracleNoSQL 'INSERT Project( project-no:= 705 ,project-title := "Stick And Fly");'
+SIM on connOracleNoSQL 'INSERT Project( project-no:= 706 ,project-title := "Night Rider");'
+
+# Current-Project
+SIM on connOracleNoSQL '''SUBCLASS Current-Project "Projects currently in progress" OF
+Project
+(
+    project-active "Whether project has been started" : BOOLEAN, REQUIRED;
+    project-members "Current employees on project" : Project-Employee, MV (DISTINCT, MAX 20), INVERSE IS current-projects;
+);'''
+SIM on connOracleNoSQL 'INSERT Current-Project FROM Project WHERE project-title = "Mission Impossible"( project-active := TRUE );'
+SIM on connOracleNoSQL 'INSERT Current-Project FROM Project WHERE project-title = "Hallo"( project-active := FALSE );'
+SIM on connOracleNoSQL 'INSERT Current-Project FROM Project WHERE project-title = "Stick And Fly"( project-active := TRUE );'
+SIM on connOracleNoSQL 'INSERT Current-Project FROM Project WHERE project-title = "Night Rider"( project-active := TRUE );'
+
+# Previous-Project
+SIM on connOracleNoSQL '''SUBCLASS Previous-Project "Completed Projects" OF Project
+(
+end-date-month "Date project completed month" : INTEGER;
+end-date-day "Date project completed day" : INTEGER;
+end-date-year "Date project completed year" : INTEGER;
+est-person-hours "Estimated hours to complete" : INTEGER;
+);'''
+SIM on connOracleNoSQL 'INSERT Previous-Project FROM Project WHERE project-title = "Code Red"( est-person-hours := 2000,end-date-month := 1, end-date-day := 6 , end-date-year := 1999);'
+SIM on connOracleNoSQL 'INSERT Previous-Project FROM Project WHERE project-title = "Desert Rose"( est-person-hours := 1300,end-date-month := 5, end-date-day := 3 , end-date-year := 1997);'
+
+# Department
+SIM on connOracleNoSQL '''CLASS Department "Departments within the company"
+(
+    dept-no "Corporate department number" : INTEGER, REQUIRED;
+    dept-name "Corporate department name" : STRING [20], REQUIRED;
+    project-at "Projects worked on at this department" : Project , INVERSE IS dept-assigned, MV (DISTINCT);
+    dept-managers "Managers for this department" : Manager, MV, INVERSE IS manager-dept;
+);'''
+SIM on connOracleNoSQL 'INSERT Department( dept-no:= 501 ,dept-name := "Purchasing");'
+SIM on connOracleNoSQL 'INSERT Department( dept-no:= 502 ,dept-name := "Sales");'
+SIM on connOracleNoSQL 'INSERT Department( dept-no:= 503 ,dept-name := "Marketing");'
+SIM on connOracleNoSQL 'INSERT Department( dept-no:= 504 ,dept-name := "R&D");'
+SIM on connOracleNoSQL 'INSERT Department( dept-no:= 505 ,dept-name := "Accounting");'
+
+# EVA Relationship
+SIM on connOracleNoSQL 'MODIFY LIMIT = 1 Person ( spouse := Person WITH (first-name = "Bill" AND last-name = "Dawer") ) WHERE first-name = "Alice" AND last-name = "Dawer";'
+SIM on connOracleNoSQL 'MODIFY Person ( children := INCLUDE Person WITH (first-name = "Bill" AND last-name = "Dawer")) WHERE first-name = "Mike" AND last-name = "Dawer" ;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Employee (employee-manager := Manager WITH(first-name = "Bill" AND last-name = "Dawer")) WHERE employee-id = 102 OR employee-id = 106;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Employee (employee-manager := Manager WITH(first-name = "Steven" AND last-name = "Williams")) WHERE employee-id = 103 OR employee-id = 105;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Employee ( employee-manager := Manager WITH(first-name = "Henry" AND last-name = "Silverstone")) WHERE employee-id = 101 OR employee-id = 107;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Employee ( employee-manager := Manager WITH(first-name = "Henry" AND last-name = "Silverstone")) WHERE employee-id = 101 OR employee-id = 107;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Project-Employee( current-projects := INCLUDE Current-Project WITH ( project-title = "Mission Impossible" )) WHERE person-id = 7 OR person-id = 3 OR person-id = 2 OR employee-id = 106 OR person-id = 1;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Project-Employee( current-projects := INCLUDE Current-Project WITH ( project-title = "Stick And Fly" )) WHERE person-id = 3 OR person-id = 7 OR person-id = 106;'
+SIM on connOracleNoSQL 'MODIFY LIMIT = ALL Project-Employee( current-projects := INCLUDE Current-Project WITH ( project-title = "Night Rider" )) WHERE person-id = 2 OR person-id = 1 OR person-id = 7;'
+SIM on connOracleNoSQL 'MODIFY Manager (projects-managing := INCLUDE Project WITH( project-title = "Mission Impossible" OR project-title = "Night Rider"), manager-dept := Department WITH ( dept-name = "Sales" )) WHERE employee-id = 101;'
+SIM on connOracleNoSQL 'MODIFY Manager (projects-managing := INCLUDE Project WITH( project-title = "Stick And Fly" OR project-title = "Code Red" OR project-title = "Desert Rose" OR project-title = "Hallo"), manager-dept := Department WITH ( dept-name = "R&D")) WHERE employee-id = 107;'
+SIM on connOracleNoSQL 'MODIFY Manager (manager-dept := Department WITH ( dept-name = "Sales")) WHERE employee-id = 108;'
+SIM on connOracleNoSQL 'MODIFY Department ( project-at := INCLUDE Project WITH ( project-title = "Mission Impossible" OR project-title = "Night Rider")) WHERE dept-name = "Sales";'
+SIM on connOracleNoSQL 'MODIFY Department ( project-at := INCLUDE Project WITH (project-title = "Stick And Fly" OR project-title = "Code Red" OR project-title = "Desert Rose" OR project-title = "Hallo"))WHERE dept-name = "R&D";'
+SIM on connOracleNoSQL 'MODIFY Project ( sub-projects := INCLUDE Project WITH (project-title = "Stick And Fly" OR project-title = "Desert Rose")) WHERE project-title = "Code Red";'
