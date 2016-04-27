@@ -21,6 +21,6 @@ The conceptual, logical, and relational models are in [project.dmd](https://gith
  * [Part1.ddl4](https://github.com/nickroberts404/F16F9-cs347-apex-app/blob/master/part1.ddl4)
 
 ## Part 2
-* [APEX Application Link](https://apex.oracle.com/pls/apex/f?p=106708:2:16905269628804::NO:::)
+* [APEX Application Link](https://apex.oracle.com/pls/apex/f?p=106708:1:)
 * [APEX SQL link (exported)](https://github.com/nickroberts404/F16F9-cs347-apex-app/blob/master/f106708.sql)
 * [SIM link](https://github.com/nickroberts404/F16F9-cs347-apex-app/blob/master/part2.sim)
