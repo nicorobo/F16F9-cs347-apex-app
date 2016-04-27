@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1D03EC00-4489-9BB0-57B8-23E504E4856A" name="Project-Employee">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<comment>Employees who are project team members</comment>
+<generatorID>27D08386-5208-178F-A3A1-1E735E67575E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="person-id" id="6EBB343A-C31C-ACA7-CB60-6AC698B0450E">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="45D66033-0CF7-EF07-52AF-3C038AD7E2CF" referredColumn="5AF83325-D418-3C11-35DF-E93C94481F37"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C99AD1A3-87DB-6FFA-632E-08CADD1992E5" name="Project-Employee_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>7CF53AB3-C685-6FF1-0530-DE9C8FFA77A0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6EBB343A-C31C-ACA7-CB60-6AC698B0450E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B98C5D5-457B-07B9-5CBF-B3DAA589E378" name="Project-Employee_Employee_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>54277DD5-8F58-5F4B-7301-26DF6162E769</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6EBB343A-C31C-ACA7-CB60-6AC698B0450E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3017125C-48B1-BFEC-B1C3-3D5FCC6EFD18" name="cur-project-emp">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<generatorID>A5D3F19D-E818-3A57-21B9-09FAF7D81FBA</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

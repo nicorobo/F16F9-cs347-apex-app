@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4AB94357-6FB4-A42F-E5F4-877D506169F1" name="President">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 18:44:56 UTC</createdTime>
+<comment>Current president of the company</comment>
+<ownerDesignName>project</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>5BB944C7-FA8E-0224-3525-6564EA0F8C6A</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+</Entity>

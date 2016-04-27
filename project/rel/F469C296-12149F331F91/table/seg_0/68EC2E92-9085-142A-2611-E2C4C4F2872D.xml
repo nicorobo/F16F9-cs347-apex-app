@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="68EC2E92-9085-142A-2611-E2C4C4F2872D" name="parent_child">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="parent_id" id="57A77125-1D78-605B-401F-E0E62946E6F6">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="97CE362A-9C54-2875-EEFE-9441128444AC" referredColumn="87945077-AE2D-8858-2A98-4C3DA5277AF6"/>
+</associations>
+</Column>
+<Column name="child_id" id="30F9B86C-BB9E-99D9-F88B-3A539B16CFA8">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BECCCA06-692D-FF00-3CBE-E582F7F9BD33" referredColumn="87945077-AE2D-8858-2A98-4C3DA5277AF6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="12747099-7EEC-13FF-12C9-5CCF12E1D52E" name="parent_child_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57A77125-1D78-605B-401F-E0E62946E6F6"/>
+<colUsage columnID="30F9B86C-BB9E-99D9-F88B-3A539B16CFA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B9DD9EA-1B52-E0DE-409D-822A5ABAA30B" name="FK_ASS_38">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<generatorID>C9AA0664-25DF-A1E1-E440-67D1315C723D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57A77125-1D78-605B-401F-E0E62946E6F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="58651AEA-03BD-FD1B-F1F6-D13EA87A22F8" name="FK_ASS_39">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<generatorID>C9AA0664-25DF-A1E1-E440-67D1315C723D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30F9B86C-BB9E-99D9-F88B-3A539B16CFA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

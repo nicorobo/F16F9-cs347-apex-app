@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4C16FB6-0979-89D7-B04C-6AC4FF058E58" name="Department">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:36:13 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="dept-no" id="383CD2B6-2B5E-CE04-0936-B3DF0CB32871">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:36:56 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dept-name" id="A36A0F7E-9F00-ED1A-750C-76350708FBAF">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:36:56 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E93086B8-5B92-2C6D-BF1F-DC868EE98B4B" name="Department_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:36:56 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="383CD2B6-2B5E-CE04-0936-B3DF0CB32871"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

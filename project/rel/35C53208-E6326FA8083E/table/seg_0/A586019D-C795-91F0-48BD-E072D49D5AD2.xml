@@ -1,0 +1,167 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A586019D-C795-91F0-48BD-E072D49D5AD2" name="Project">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:47:33 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="project-no" id="B0E4D907-9EC8-DF9F-40CA-6A99CE8E70A0">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:48:26 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type" id="FF3C5F0C-9A11-156F-18BA-425887B3F8E1">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:57:53 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="project-title" id="E0FC7B52-8680-A69B-05DB-B9EC882A5BB7">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:48:26 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="project-active" id="569C7A97-06C9-A78E-17D7-31052F12A6D7">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:54:31 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="end-date" id="C51E4E4E-E61E-9D94-A9B8-82CB94464ED3">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:54:31 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="est-person-hours" id="4D08C600-DB9D-84FF-9A77-11C6A65E32D8">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:54:31 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dept-no" id="AE50543A-94E8-2B11-CFDF-D4C604666E6F">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:24:32 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0BB4F40B-DE65-01D6-743D-5904F8C26005" referredColumn="383CD2B6-2B5E-CE04-0936-B3DF0CB32871"/>
+</associations>
+</Column>
+<Column name="manager-id" id="FD49747A-3D2F-31AB-1A49-E64D2887AEA5">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:25:28 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D32D967B-06EA-9349-56C0-A60471657E89" referredColumn="336AB68B-3162-F68B-0B37-751456213538"/>
+</associations>
+</Column>
+<Column name="parent-project-no" id="E9104DB2-D021-17AF-2F3F-97CB5F8377DB">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:28:01 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A511287-C7D0-5B1D-FB0F-FBF999445046" referredColumn="B0E4D907-9EC8-DF9F-40CA-6A99CE8E70A0"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F8DCBC15-B9BE-BEBB-D36A-A8611CB2F859" name="Project_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:48:26 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0E4D907-9EC8-DF9F-40CA-6A99CE8E70A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="74493CC3-2E9A-08EF-0470-52AB2AFAAEDA" name="Project_Dept_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:24:31 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE50543A-94E8-2B11-CFDF-D4C604666E6F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E81AA3A-29FA-ADA9-EC77-70723CA1B353" name="Project_Man_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:25:28 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD49747A-3D2F-31AB-1A49-E64D2887AEA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C312FE46-6E7F-1002-D968-70BA7BBCC814" name="Parent_proj_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:28:01 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9104DB2-D021-17AF-2F3F-97CB5F8377DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

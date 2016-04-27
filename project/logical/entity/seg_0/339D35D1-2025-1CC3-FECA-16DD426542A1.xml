@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="339D35D1-2025-1CC3-FECA-16DD426542A1" name="Person">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 18:43:17 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="person-id" id="BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:30:28 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="first-name" id="32B974F7-1DDF-0F6B-0044-CD0D3FB2B7FA">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:30:57 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="last-name" id="8F3D5368-1B5C-620A-B321-E7518E694962">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:31:16 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="home-address" id="3E577D11-8AE6-D301-79D8-8741F00BBFCA">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:31:32 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="zipcode" id="AC358F3D-5471-40A2-BEC2-834A1A70B192">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:31:53 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="home-phone" id="4293063F-88B5-D704-555F-0309F2C738AB">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:32:07 UTC</createdTime>
+<comment>Home phone number (optional)</comment>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="us-citizen" id="77FE7BD3-DF65-6A6B-08A7-9EF136280258">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:35:28 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spouse" id="9780214E-78FE-C5DB-3649-E4E3065D9C0C">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 20:53:18 UTC</createdTime>
+<generatorID>9B8AC528-605B-4D0B-C73A-9150B1130F5E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7CF53AB3-C685-6FF1-0530-DE9C8FFA77A0" name="Person PK">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:30:36 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

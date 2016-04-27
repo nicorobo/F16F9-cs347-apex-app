@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="85FD99CC-A50B-5A2B-0E3E-25200D681ADB" name="Project">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 18:45:19 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="project-no" id="CCFB69A1-AA86-171E-05B3-D0C08F5EC31F">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:47:52 UTC</createdTime>
+<comment>Unique project identification</comment>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="project-title" id="D2AE8E64-ABDC-8170-33D6-85B4B95E87BD">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:48:12 UTC</createdTime>
+<comment>Code name for project</comment>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="manager" id="A9FACB15-893B-D5FF-D0B7-8B8B44C09624">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 21:42:18 UTC</createdTime>
+<generatorID>408294AD-186B-EB04-4EDB-88A1C490343A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dept-no" id="2B5643AF-3CCA-31D5-88FE-C2C90120D6BA">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 21:48:17 UTC</createdTime>
+<generatorID>630622E0-B2B3-9717-1A45-521FDAABF70B</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>432E5DCD-3010-E386-7730-BA63030F895B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="parent_project" id="7C7E254A-B577-5B50-04B8-60EBF1124338">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 21:55:25 UTC</createdTime>
+<comment>Unique project identification</comment>
+<generatorID>F1C4849F-66C2-95B9-81CA-DD526833B373</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>CCFB69A1-AA86-171E-05B3-D0C08F5EC31F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4845189C-CF06-E71E-52EF-31B752DF602D" name="Project PK">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:48:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CCFB69A1-AA86-171E-05B3-D0C08F5EC31F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

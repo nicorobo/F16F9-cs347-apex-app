@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7A882EFC-27E8-48C3-E678-A6056F485F5F" name="Employee">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<comment>Current employees of the company</comment>
+<generatorID>BD1E9CC3-221D-E3E9-E648-60BEB3D72746</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="person-id" id="5AF83325-D418-3C11-35DF-E93C94481F37">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2C9F17E4-58A5-9499-7735-578C87D8F569" referredColumn="87945077-AE2D-8858-2A98-4C3DA5277AF6"/>
+</associations>
+</Column>
+<Column name="employee-id" id="F7BF9CBC-6289-07FF-D854-FFDC73FFD7DA">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<comment>Unique employee identification</comment>
+<generatorID>32C96953-1F09-CC07-F51F-BB0F607917A6</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary" id="2D37B78E-3A87-CD47-8E48-E89129EF160D">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>71B0CDEB-E0E2-3133-3B1A-CFFD2623D1F8</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary-exception" id="CAAFA040-FE9A-C02D-C702-69A518BF8FCB">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<comment>TRUE if salary can exceed maximum</comment>
+<generatorID>9DE58C8D-8B00-19A8-2E7A-AE125B861255</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="manager" id="068E692C-56CC-90E5-7228-4739E9130484">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>2AA951FB-28DD-EA39-5558-7F9E0CC8BEA8</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF031A6A-7234-0AFF-B617-8BFEF052379E" referredColumn="220BD206-3BE7-B5A2-8082-14FD0A9DCD8C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B87DE1AE-EBDF-541B-88C8-51A8F4B928F4" name="Employee_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>7CF53AB3-C685-6FF1-0530-DE9C8FFA77A0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AF83325-D418-3C11-35DF-E93C94481F37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1506E2AC-13D9-4E8F-16EC-9EE521AA7236" name="Employee_Person_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:02 UTC</createdTime>
+<generatorID>129DD9A6-CC42-C9EA-8B10-A4F3EEC828A0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AF83325-D418-3C11-35DF-E93C94481F37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B2719C6-2E9A-D24C-9086-2721098A0370" name="Employee_Manager_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<generatorID>E6FFD5D7-95DE-6F1B-9772-99FB48D58F94</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="068E692C-56CC-90E5-7228-4739E9130484"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

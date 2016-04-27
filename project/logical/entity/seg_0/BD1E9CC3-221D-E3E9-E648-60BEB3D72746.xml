@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BD1E9CC3-221D-E3E9-E648-60BEB3D72746" name="Employee">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 18:44:00 UTC</createdTime>
+<comment>Current employees of the company</comment>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>339D35D1-2025-1CC3-FECA-16DD426542A1</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="employee-id" id="32C96953-1F09-CC07-F51F-BB0F607917A6">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:38:34 UTC</createdTime>
+<comment>Unique employee identification</comment>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="salary" id="71B0CDEB-E0E2-3133-3B1A-CFFD2623D1F8">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:41:14 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="salary-exception" id="9DE58C8D-8B00-19A8-2E7A-AE125B861255">
+<createdBy>nickroberts404</createdBy>
+<createdTime>2016-03-23 20:41:26 UTC</createdTime>
+<comment>TRUE if salary can exceed maximum</comment>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="manager" id="2AA951FB-28DD-EA39-5558-7F9E0CC8BEA8">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 21:00:08 UTC</createdTime>
+<generatorID>E6FFD5D7-95DE-6F1B-9772-99FB48D58F94</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="35C53208-03E8-EC9E-1544-E6326FA8083E" value="true"/>
+<item key="F469C296-7FD5-64FA-F898-12149F331F91" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>BBE1A3E9-F867-2CF5-AF96-EDA117DF3BE3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3B93757A-54E9-B469-8C90-24D35C8A3452" name="cur_project_emp">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:20:34 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cur_project_emp_id" id="F6E4C4BC-CBC4-9570-98DB-1B9C50942C23">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:21:02 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="project-no" id="15447925-148A-01DB-A1D3-A03B54EAB6DD">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:21:16 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F3F37604-0FBE-702E-E5DC-99CAD22E456A" referredColumn="B0E4D907-9EC8-DF9F-40CA-6A99CE8E70A0"/>
+</associations>
+</Column>
+<Column name="person-id" id="660D3E06-87DD-0C46-FA4C-7CA91AE82E96">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:22:08 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4911DCBA-3971-182C-4029-DB2E77AA0DAB" referredColumn="336AB68B-3162-F68B-0B37-751456213538"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5C087E86-1B21-5715-55D6-9C2D8989B299" name="cur_project_emp_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:21:30 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6E4C4BC-CBC4-9570-98DB-1B9C50942C23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9062C3C1-FECC-0007-37B9-95FB3022E557" name="project_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:21:16 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15447925-148A-01DB-A1D3-A03B54EAB6DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFF7AD76-B49A-86D6-56A3-47CB62E6AB40" name="emp_FK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 23:22:08 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="660D3E06-87DD-0C46-FA4C-7CA91AE82E96"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

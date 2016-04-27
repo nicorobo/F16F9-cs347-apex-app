@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F06106D6-BCA5-6288-3638-EBC082226979" name="cur-project-emp">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<ordsAlias>cur_project_emp</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cur_project_no" id="BCC8855F-D442-46D9-0FF4-804012D1FCFF">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="526C689C-D541-A025-E3C5-5C73122A692A" referredColumn="93FDA621-9170-AD69-89B6-BE66A30FA996"/>
+</associations>
+</Column>
+<Column name="project_emp_id" id="D981FFF6-EF22-7D56-0722-448593CE1215">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD6696E9-89DD-74DC-999C-C0097F337798" referredColumn="6EBB343A-C31C-ACA7-CB60-6AC698B0450E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC04C240-387B-C620-D016-FF1979ABBA2F" name="cur-project-emp_PK">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCC8855F-D442-46D9-0FF4-804012D1FCFF"/>
+<colUsage columnID="D981FFF6-EF22-7D56-0722-448593CE1215"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90FA5999-F3F6-41BC-8D53-7072F0735E4D" name="FK_ASS_32">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<generatorID>A5D3F19D-E818-3A57-21B9-09FAF7D81FBA</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCC8855F-D442-46D9-0FF4-804012D1FCFF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D428D2C-0372-D923-9B84-91D0E2354D75" name="FK_ASS_33">
+<createdBy>Cindy</createdBy>
+<createdTime>2016-03-26 22:03:03 UTC</createdTime>
+<generatorID>A5D3F19D-E818-3A57-21B9-09FAF7D81FBA</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D981FFF6-EF22-7D56-0722-448593CE1215"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
